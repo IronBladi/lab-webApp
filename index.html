@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Notas</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .resultado { margin-top: 10px; font-weight: bold; }
+    .error { color: red; }
+    .aprobado { color: green; }
+  </style>
+</head>
+<body>
+  <h2>Evaluador de Estudiantes</h2>
+  <input type="text" id="nombre" placeholder="Nombre Estudiante">
+  <input type="number" id="nota" placeholder="Nota (0-100)">
+  <button onclick="procesar()">Verificar</button> 
+  <div id="salida" class="resultado"></div>
+
+  <!-- Importamos nuestra lógica -->
+  <script src="logic.js"></script>
+
+  <script>
+    function procesar() {
+      const nombre = document.getElementById('nombre').value;
+      const notaInput = parseFloat(document.getElementById('nota').value);
+
+      const estado = determinarEstado(notaInput);
+
+      const div = document.getElementById('salida');
+      div.innerText = `Estudiante ${nombre}: ${estado}`;
+
+      div.className = "resultado " + (estado === "APROBADO" ? "aprobado" : "error");
+    }
+  </script>
+</body>
+</html>
