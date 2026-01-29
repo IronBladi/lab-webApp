@@ -3,6 +3,10 @@
 ## Estatus
 Aceptado
 
+Corrección Wisberth:
+- El estado fue confirmado como "Aceptado" ya que JWT
+  está implementado en el código actual.
+
 ---
 
 ## Contexto
@@ -13,6 +17,10 @@ El sistema Lab WebApp requiere un mecanismo de autenticación seguro y escalable
 - Soportar crecimiento y posibles clientes externos (web o mobile)
 
 Se evaluaron alternativas como sesiones tradicionales con cookies y autenticación basada en tokens.
+
+Corrección Stiven:
+- Se mantuvo la mención a frontend solo como proyección futura,
+  no como componente implementado.
 
 ---
 
@@ -26,6 +34,10 @@ El flujo adoptado es:
 4. El token es enviado al cliente y utilizado en cada petición protegida mediante el encabezado `Authorization`.
 
 Las contraseñas se almacenan de forma segura utilizando **bcrypt** para hashing.
+
+Validado por Rodrigo:
+- Flujo contrastado directamente con `authController`.
+- bcrypt confirmado como mecanismo de hashing real.
 
 ---
 
@@ -42,6 +54,10 @@ Las contraseñas se almacenan de forma segura utilizando **bcrypt** para hashing
 - Requiere una correcta gestión de expiración y renovación de tokens.
 - En caso de compromiso del token, no puede revocarse fácilmente sin mecanismos adicionales.
 - Mayor responsabilidad en el cliente para el almacenamiento seguro del token.
+
+Corrección gabriel:
+- No se mencionan refresh tokens ni blacklists,
+  ya que no están implementados en el sistema actual.
 
 ---
 
